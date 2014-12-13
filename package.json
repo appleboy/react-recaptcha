@@ -1,0 +1,28 @@
+{
+  "name": "react-recapcha",
+  "version": "0.0.1",
+  "description": "A react.js reCAPTCHA for Google",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/appleboy/react-recapcha.git"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "reCAPTCHA",
+    "component"
+  ],
+  "author": "Bo-Yi Wu",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/appleboy/react-recapcha/issues"
+  },
+  "homepage": "https://github.com/appleboy/react-recapcha",
+  "devDependencies": {
+    "react": "^0.12.1"
+  }
+}
