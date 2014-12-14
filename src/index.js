@@ -17,7 +17,6 @@ var Recaptcha = React.createClass({
       onloadCallback: undefined,
       onloadCallbackName: 'onloadCallback',
       verifyCallback: undefined,
-      verifyCallbackName: 'verifyCallback',
       render: 'onload',
       theme: 'light',
       type: 'image'
@@ -25,15 +24,11 @@ var Recaptcha = React.createClass({
   },
 
   render: function() {
-    if (this.props.verifyCallback) {
-      window[this.props.verifyCallbackName] = this.props.verifyCallback;
-    }
-
     if (this.props.render == 'explicit' && this.props.onloadCallback) {
       window[this.props.onloadCallbackName] = function () {
         grecaptcha.render(this.props.elementID, {
           'sitekey': this.props.sitekey,
-          'callback': (this.props.verifyCallback) ? window[this.props.verifyCallbackName] : undefined,
+          'callback': (this.props.verifyCallback) ? this.props.verifyCallback : undefined,
           'theme': this.props.theme,
           'type': this.props.type
         });

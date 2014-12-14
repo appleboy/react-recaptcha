@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/appleboy/react-recaptcha",
   "devDependencies": {
+    "browserify": "^7.0.1",
     "jsxhint": "^0.8.1",
     "mocha": "^2.0.1",
     "mochify": "^2.1.0",

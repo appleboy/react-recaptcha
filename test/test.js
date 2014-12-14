@@ -43,7 +43,7 @@ describe('react-time', function() {
     assert(/id="testRecaptcha"/.test(markup));
   });
 
-  it('change callback name options', function() {
+  it('change onload callback name options', function() {
     var c = React.createElement(Recaptcha, {
       sitekey: 123456,
       elementID: 'testRecaptcha',
@@ -53,19 +53,5 @@ describe('react-time', function() {
     });
     var markup = React.renderToString(c);
     assert(/data-onloadcallbackname="RecaptchaCallbackName"/.test(markup));
-  });
-
-  it('change verify callback name options', function() {
-    var c = React.createElement(Recaptcha, {
-      sitekey: 123456,
-      elementID: 'testRecaptcha',
-      render: 'explicit',
-      onloadCallbackName: 'RecaptchaCallbackName',
-      onloadCallback: function() {},
-      verifyCallbackName: 'RecaptchaVerifyCallbackName',
-      verifyCallback: function() {}
-    });
-    var markup = React.renderToString(c);
-    assert(/data-verifycallbackname="RecaptchaVerifyCallbackName"/.test(markup));
   });
 });
