@@ -1,6 +1,12 @@
 # [react](http://facebook.github.io/react/)-recaptcha
 
-[![Build Status](https://travis-ci.org/appleboy/react-recaptcha.svg?branch=master)](https://travis-ci.org/appleboy/react-recaptcha) [![devDependency Status](https://david-dm.org/appleboy/react-recaptcha/dev-status.svg)](https://david-dm.org/appleboy/react-recaptcha#info=devDependencies)
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status](https://travis-ci.org/appleboy/react-recaptcha.svg?branch=master)](https://travis-ci.org/appleboy/react-recaptcha) [![devDependency Status](https://david-dm.org/appleboy/react-recaptcha/dev-status.svg)](https://david-dm.org/appleboy/react-recaptcha#info=devDependencies)
+
+[![NPM](https://nodei.co/npm/react-recaptcha.png?downloads=true&stars=true)](https://nodei.co/npm/react-recaptcha/)
+
+[npm-url]: https://www.npmjs.org/package/react-recaptcha
+[npm-image]: http://img.shields.io/npm/v/react-recaptcha.svg
+[downloads-image]: http://img.shields.io/npm/dm/react-recaptcha.svg
 
 A [react.js]((http://facebook.github.io/react/)) reCAPTCHA for Google. The FREE anti-abuse service. Easy to add, advanced security, accessible to wide range of users and platforms.
 
