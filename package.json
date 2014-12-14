@@ -1,6 +1,6 @@
 {
   "name": "react-recaptcha",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A react.js reCAPTCHA for Google",
   "main": "src/index.js",
   "scripts": {
