@@ -5,7 +5,7 @@ var React = require('react');
 var Recaptcha = React.createClass({
   propTypes: {
     className: React.PropTypes.string,
-    CallbackName: React.PropTypes.string,
+    onloadCallbackName: React.PropTypes.string,
     elementID: React.PropTypes.string,
     onloadCallback: React.PropTypes.func,
     verifyCallback: React.PropTypes.func
