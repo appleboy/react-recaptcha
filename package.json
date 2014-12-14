@@ -4,7 +4,8 @@
   "description": "A react.js reCAPTCHA for Google",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "jsx src build",
+    "test": "jsx src build && mochify -R dot ./test/test.js"
   },
   "repository": {
     "type": "git",
