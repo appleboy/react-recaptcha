@@ -21,4 +21,51 @@ describe('react-time', function() {
     assert(/data-theme="dark"/.test(markup));
     assert(/data-type="audio"/.test(markup));
   });
+
+  it('render explicit options', function() {
+    var c = React.createElement(Recaptcha, {
+      sitekey: 123456,
+      render: 'explicit',
+      onloadCallback: function() {}
+    });
+    var markup = React.renderToString(c);
+    assert(/id="g-recaptcha"/.test(markup));
+  });
+
+  it('change Element ID options', function() {
+    var c = React.createElement(Recaptcha, {
+      sitekey: 123456,
+      elementID: 'testRecaptcha',
+      render: 'explicit',
+      onloadCallback: function() {}
+    });
+    var markup = React.renderToString(c);
+    assert(/id="testRecaptcha"/.test(markup));
+  });
+
+  it('change callback name options', function() {
+    var c = React.createElement(Recaptcha, {
+      sitekey: 123456,
+      elementID: 'testRecaptcha',
+      render: 'explicit',
+      onloadCallbackName: 'RecaptchaCallbackName',
+      onloadCallback: function() {}
+    });
+    var markup = React.renderToString(c);
+    assert(/data-onloadcallbackname="RecaptchaCallbackName"/.test(markup));
+  });
+
+  it('change verify callback name options', function() {
+    var c = React.createElement(Recaptcha, {
+      sitekey: 123456,
+      elementID: 'testRecaptcha',
+      render: 'explicit',
+      onloadCallbackName: 'RecaptchaCallbackName',
+      onloadCallback: function() {},
+      verifyCallbackName: 'RecaptchaVerifyCallbackName',
+      verifyCallback: function() {}
+    });
+    var markup = React.renderToString(c);
+    assert(/data-verifycallbackname="RecaptchaVerifyCallbackName"/.test(markup));
+  });
 });
