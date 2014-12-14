@@ -1,6 +1,6 @@
-# react-recapcha
+# react-recaptcha
 
-[![Build Status](https://travis-ci.org/appleboy/react-recapcha.svg?branch=master)](https://travis-ci.org/appleboy/react-recapcha) [![devDependency Status](https://david-dm.org/appleboy/react-recapcha/dev-status.svg)](https://david-dm.org/appleboy/react-recapcha#info=devDependencies)
+[![Build Status](https://travis-ci.org/appleboy/react-recaptcha.svg?branch=master)](https://travis-ci.org/appleboy/react-recaptcha) [![devDependency Status](https://david-dm.org/appleboy/react-recaptcha/dev-status.svg)](https://david-dm.org/appleboy/react-recaptcha#info=devDependencies)
 
 A react.js reCAPTCHA for Google. The FREE anti-abuse service. Easy to add, advanced security, accessible to wide range of users and platforms.
 

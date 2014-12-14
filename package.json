@@ -1,5 +1,5 @@
 {
-  "name": "react-recapcha",
+  "name": "react-recaptcha",
   "version": "0.0.1",
   "description": "A react.js reCAPTCHA for Google",
   "main": "src/index.js",
@@ -29,5 +29,9 @@
     "mochify": "^2.1.0",
     "react": "^0.12.1",
     "react-tools": "^0.12.1"
+  },
+  "dependencies": {
+    "react": "^0.12.1",
+    "reactify": "^0.17.1"
   }
 }
