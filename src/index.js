@@ -3,8 +3,13 @@
 var React = require('react');
 
 var Recaptcha = React.createClass({
+  propTypes: {
+    className: React.PropTypes.string
+  },
   render: function() {
-    <div class="g-recaptcha" data-sitekey="this.props.siteKey"></div>
+    return (
+      <div className='g-recaptcha' data-sitekey={this.props.siteKey}></div>
+    );
   }
 });
 

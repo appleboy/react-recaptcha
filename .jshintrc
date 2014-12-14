@@ -13,5 +13,12 @@
   "quotmark": "single",
   "undef": true,
   "unused": true,
-  "strict": true
+  "strict": true,
+  "globals": {
+    "require": false,
+    "module": false,
+    "exports": false,
+    "it": false,
+    "describe": false
+  }
 }

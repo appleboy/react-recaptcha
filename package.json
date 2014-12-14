@@ -23,6 +23,10 @@
   },
   "homepage": "https://github.com/appleboy/react-recapcha",
   "devDependencies": {
-    "react": "^0.12.1"
+    "jsxhint": "^0.8.1",
+    "mocha": "^2.0.1",
+    "mochify": "^2.1.0",
+    "react": "^0.12.1",
+    "react-tools": "^0.12.1"
   }
 }
