@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/appleboy/react-recapcha.git"
+    "url": "https://github.com/appleboy/react-recaptcha.git"
   },
   "keywords": [
     "react",
@@ -20,9 +20,9 @@
   "author": "Bo-Yi Wu",
   "license": "BSD",
   "bugs": {
-    "url": "https://github.com/appleboy/react-recapcha/issues"
+    "url": "https://github.com/appleboy/react-recaptcha/issues"
   },
-  "homepage": "https://github.com/appleboy/react-recapcha",
+  "homepage": "https://github.com/appleboy/react-recaptcha",
   "devDependencies": {
     "jsxhint": "^0.8.1",
     "mocha": "^2.0.1",
