@@ -1,10 +1,10 @@
 {
   "name": "react-recaptcha",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A react.js reCAPTCHA for Google",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "build": "jsx src build",
+    "build": "jsx src/index dist --no-cache-dir ",
     "test": "jsx src build && mochify -R dot ./test/test.js"
   },
   "repository": {
@@ -24,16 +24,16 @@
   },
   "homepage": "https://github.com/appleboy/react-recaptcha",
   "devDependencies": {
-    "browserify": "^7.0.1",
-    "jsxhint": "^0.8.1",
+    "browserify": "^11.0.1",
+    "jsxhint": "^0.15.1",
     "mocha": "^2.0.1",
-    "mochify": "^2.1.0",
-    "react": "^0.12.1",
-    "react-tools": "^0.12.1"
+    "mochify": "^2.13.0",
+    "react": "^0.13.3",
+    "react-tools": "^0.13.3"
   },
   "dependencies": {
-    "react": "^0.12.1",
-    "reactify": "^0.17.1"
+    "react": "^0.13.3",
+    "reactify": "^1.1.1"
   },
   "browserify": {
     "transform": [
