@@ -2,7 +2,7 @@
 
 var React = require('react');
 
-var Recaptcha = React.createClass({
+var Recaptcha = React.createClass({displayName: "Recaptcha",
   propTypes: {
     className: React.PropTypes.string,
     onloadCallbackName: React.PropTypes.string,
@@ -44,20 +44,20 @@ var Recaptcha = React.createClass({
         }
       }.bind(this);
       return (
-        <div id={this.props.elementID}
-          data-onloadcallbackname={this.props.onloadCallbackName}
-          data-verifycallbackname={this.props.verifyCallbackName}
-          >
-        </div>
+        React.createElement("div", {id: this.props.elementID, 
+          "data-onloadcallbackname": this.props.onloadCallbackName, 
+          "data-verifycallbackname": this.props.verifyCallbackName
+          }
+        )
       );
     } else {
       return (
-        <div className="g-recaptcha"
-          data-sitekey={this.props.sitekey}
-          data-theme={this.props.theme}
-          data-type={this.props.type}
-          >
-        </div>
+        React.createElement("div", {className: "g-recaptcha", 
+          "data-sitekey": this.props.sitekey, 
+          "data-theme": this.props.theme, 
+          "data-type": this.props.type
+          }
+        )
       );
     }
   }
