@@ -44,17 +44,17 @@ var Recaptcha = React.createClass({displayName: "Recaptcha",
         }
       }.bind(this);
       return (
-        React.createElement("div", {id: this.props.elementID,
-          "data-onloadcallbackname": this.props.onloadCallbackName,
+        React.createElement("div", {id: this.props.elementID, 
+          "data-onloadcallbackname": this.props.onloadCallbackName, 
           "data-verifycallbackname": this.props.verifyCallbackName
           }
         )
       );
     } else {
       return (
-        React.createElement("div", {className: "g-recaptcha",
-          "data-sitekey": this.props.sitekey,
-          "data-theme": this.props.theme,
+        React.createElement("div", {className: "g-recaptcha", 
+          "data-sitekey": this.props.sitekey, 
+          "data-theme": this.props.theme, 
           "data-type": this.props.type
           }
         )

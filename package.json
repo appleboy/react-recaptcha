@@ -4,8 +4,8 @@
   "description": "A react.js reCAPTCHA for Google",
   "main": "dist/index.js",
   "scripts": {
-    "build": "jsx src/index dist --no-cache-dir ",
-    "test": "jsx src build && mochify -R dot ./test/test.js"
+    "build": "jsx src dist --no-cache-dir",
+    "test": "jsx src dist --no-cache-dir && mochify -R dot ./test/test.js"
   },
   "repository": {
     "type": "git",
