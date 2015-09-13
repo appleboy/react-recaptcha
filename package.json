@@ -4,8 +4,7 @@
   "description": "A react.js reCAPTCHA for Google",
   "main": "src/index.js",
   "scripts": {
-    "build": "jsx src build",
-    "test": "jsx src build && mochify -R dot ./test/test.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -24,20 +23,29 @@
   },
   "homepage": "https://github.com/appleboy/react-recaptcha",
   "devDependencies": {
-    "browserify": "^7.0.1",
-    "jsxhint": "^0.8.1",
-    "mocha": "^2.0.1",
-    "mochify": "^2.1.0",
-    "react": "^0.12.1",
-    "react-tools": "^0.12.1"
+    "babel-jest": "^5.3.0",
+    "jest": "^0.1.40",
+    "jest-cli": "^0.5.4"
   },
   "dependencies": {
-    "react": "^0.12.1",
-    "reactify": "^0.17.1"
+    "babel-core": "^5.8.24",
+    "babel-loader": "^5.3.2",
+    "react": "^0.13.3",
+    "webpack": "^1.12.1"
   },
-  "browserify": {
-    "transform": [
-      "reactify"
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react"
+    ],
+    "testFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx"
     ]
   }
 }
