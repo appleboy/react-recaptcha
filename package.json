@@ -22,15 +22,15 @@
     "url": "https://github.com/appleboy/react-recaptcha/issues"
   },
   "homepage": "https://github.com/appleboy/react-recaptcha",
-  "devDependencies": {
-    "babel-jest": "^5.3.0",
-    "jest": "^0.1.40",
-    "jest-cli": "^0.5.4"
+  "peerDependencies": {
+    "react": "^0.13.3 || ^0.14.0-rc1"
   },
-  "dependencies": {
+  "devDependencies": {
     "babel-core": "^5.8.24",
+    "babel-jest": "^5.3.0",
     "babel-loader": "^5.3.2",
-    "react": "^0.13.3",
+    "jest": "^0.1.40",
+    "jest-cli": "^0.5.4",
     "webpack": "^1.12.1"
   },
   "jest": {
