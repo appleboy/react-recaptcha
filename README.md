@@ -58,7 +58,8 @@ var Recaptcha = require('react-recaptcha');
 
 React.render(
   <Recaptcha
-    sitekey="xxxxxxxxxxxxxxxxxxxx" />,
+    sitekey="xxxxxxxxxxxxxxxxxxxx" 
+  />,
   document.getElementById('example')
 );
 ```
@@ -93,9 +94,10 @@ var callback = function () {
 
 React.render(
   <Recaptcha
-    sitekey="xxxxxxxxxxxxxxxxxxxx" />,
+    sitekey="xxxxxxxxxxxxxxxxxxxx"
     render="explicit"
-    onloadCallback={callback} />,
+    onloadCallback={callback} 
+  />,
   document.getElementById('example')
 );
 ```
@@ -117,10 +119,11 @@ var verifyCallback = function (response) {
 
 React.render(
   <Recaptcha
-    sitekey="xxxxxxxxxxxxxxxxxxxx" />,
+    sitekey="xxxxxxxxxxxxxxxxxxxx"
     render="explicit"
     verifyCallback={verifyCallback}
-    onloadCallback={callback} />,
+    onloadCallback={callback} 
+  />,
   document.getElementById('example')
 );
 ```
@@ -130,8 +133,9 @@ Change the color theme of the widget. Please `theme` property `light|dark`. Defa
 ```javascript
 React.render(
   <Recaptcha
-    sitekey="xxxxxxxxxxxxxxxxxxxx" />,
-    theme="dark" />,
+    sitekey="xxxxxxxxxxxxxxxxxxxx"
+    theme="dark" 
+  />,
   document.getElementById('example')
 );
 ```
@@ -141,8 +145,9 @@ Change the type of CAPTCHA to serve. Please `type` property `audio|image`. Defau
 ```javascript
 React.render(
   <Recaptcha
-    sitekey="xxxxxxxxxxxxxxxxxxxx" />,
-    type="audio" />,
+    sitekey="xxxxxxxxxxxxxxxxxxxx"
+    type="audio" 
+  />,
   document.getElementById('example')
 );
 ```
