@@ -8,7 +8,12 @@ var Recaptcha = React.createClass({
     onloadCallbackName: React.PropTypes.string,
     elementID: React.PropTypes.string,
     onloadCallback: React.PropTypes.func,
-    verifyCallback: React.PropTypes.func
+    verifyCallback: React.PropTypes.func,
+    render: React.PropTypes.string,
+    sitekey: React.PropTypes.string,
+    theme: React.PropTypes.string,
+    type: React.PropTypes.string,
+    verifyCallbackName: React.PropTypes.string
   },
 
   getDefaultProps: function() {
@@ -16,6 +21,7 @@ var Recaptcha = React.createClass({
       elementID: 'g-recaptcha',
       onloadCallback: undefined,
       onloadCallbackName: 'onloadCallback',
+      verifyCallbackName: 'verifyCallback',
       verifyCallback: undefined,
       render: 'onload',
       theme: 'light',
@@ -24,7 +30,7 @@ var Recaptcha = React.createClass({
   },
 
   render: function() {
-    if (this.props.render == 'explicit' && this.props.onloadCallback) {
+    if (this.props.render === 'explicit' && this.props.onloadCallback) {
       window[this.props.onloadCallbackName] = function () {
         grecaptcha.render(this.props.elementID, {
           'sitekey': this.props.sitekey,
@@ -46,7 +52,7 @@ var Recaptcha = React.createClass({
       );
     } else {
       return (
-        <div className='g-recaptcha'
+        <div className="g-recaptcha"
           data-sitekey={this.props.sitekey}
           data-theme={this.props.theme}
           data-type={this.props.type}
