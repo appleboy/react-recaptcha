@@ -7,7 +7,7 @@ module.exports = {
   entry: "./src/index",
 
   output: {
-    library: 'ReactRecapcha',
+    library: 'ReactRecaptcha',
     libraryTarget: 'umd',
     path: __dirname + "/dist/",
     filename: "react-recaptcha.js"
