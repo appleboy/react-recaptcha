@@ -11,7 +11,6 @@ let verifyCallback = (response) => {
   console.log(response);
 };
 
-
 let App = React.createClass({
   render() {
     return (
