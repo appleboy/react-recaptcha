@@ -4,6 +4,7 @@
   "description": "A react.js reCAPTCHA for Google",
   "main": "dist/react-recaptcha.js",
   "scripts": {
+    "start": "babel-node example/server.js",
     "build": "rm -rf dist && webpack -p --config webpack.production.config.js",
     "test": "jest"
   },

@@ -58,7 +58,7 @@ var Recaptcha = require('react-recaptcha');
 
 React.render(
   <Recaptcha
-    sitekey="xxxxxxxxxxxxxxxxxxxx" 
+    sitekey="xxxxxxxxxxxxxxxxxxxx"
   />,
   document.getElementById('example')
 );
@@ -96,7 +96,7 @@ React.render(
   <Recaptcha
     sitekey="xxxxxxxxxxxxxxxxxxxx"
     render="explicit"
-    onloadCallback={callback} 
+    onloadCallback={callback}
   />,
   document.getElementById('example')
 );
@@ -122,7 +122,7 @@ React.render(
     sitekey="xxxxxxxxxxxxxxxxxxxx"
     render="explicit"
     verifyCallback={verifyCallback}
-    onloadCallback={callback} 
+    onloadCallback={callback}
   />,
   document.getElementById('example')
 );
@@ -134,7 +134,7 @@ Change the color theme of the widget. Please `theme` property `light|dark`. Defa
 React.render(
   <Recaptcha
     sitekey="xxxxxxxxxxxxxxxxxxxx"
-    theme="dark" 
+    theme="dark"
   />,
   document.getElementById('example')
 );
@@ -146,7 +146,7 @@ Change the type of CAPTCHA to serve. Please `type` property `audio|image`. Defau
 React.render(
   <Recaptcha
     sitekey="xxxxxxxxxxxxxxxxxxxx"
-    type="audio" 
+    type="audio"
   />,
   document.getElementById('example')
 );
