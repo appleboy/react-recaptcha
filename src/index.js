@@ -1,48 +1,48 @@
 'use strict';
 
-var React = require('react');
+import React from 'react';
 
-var Recaptcha = React.createClass({
-  propTypes: {
-    className: React.PropTypes.string,
-    onloadCallbackName: React.PropTypes.string,
-    elementID: React.PropTypes.string,
-    onloadCallback: React.PropTypes.func,
-    verifyCallback: React.PropTypes.func,
-    render: React.PropTypes.string,
-    sitekey: React.PropTypes.string,
-    theme: React.PropTypes.string,
-    type: React.PropTypes.string,
-    verifyCallbackName: React.PropTypes.string
-  },
+const propTypes = {
+  className: React.PropTypes.string,
+  onloadCallbackName: React.PropTypes.string,
+  elementID: React.PropTypes.string,
+  onloadCallback: React.PropTypes.func,
+  verifyCallback: React.PropTypes.func,
+  render: React.PropTypes.string,
+  sitekey: React.PropTypes.string,
+  theme: React.PropTypes.string,
+  type: React.PropTypes.string,
+  verifyCallbackName: React.PropTypes.string,
+};
 
-  getDefaultProps: function() {
-    return {
-      elementID: 'g-recaptcha',
-      onloadCallback: undefined,
-      onloadCallbackName: 'onloadCallback',
-      verifyCallbackName: 'verifyCallback',
-      verifyCallback: undefined,
-      render: 'onload',
-      theme: 'light',
-      type: 'image'
-    };
-  },
+const defaultProps = {
+  elementID: 'g-recaptcha',
+  onloadCallback: undefined,
+  onloadCallbackName: 'onloadCallback',
+  verifyCallbackName: 'verifyCallback',
+  verifyCallback: undefined,
+  render: 'onload',
+  theme: 'light',
+  type: 'image',
+};
 
-  render: function() {
+export default class Recaptcha extends React.Component {
+
+  render() {
     if (this.props.render === 'explicit' && this.props.onloadCallback) {
-      window[this.props.onloadCallbackName] = function () {
+      window[this.props.onloadCallbackName] = () => {
         grecaptcha.render(this.props.elementID, {
-          'sitekey': this.props.sitekey,
-          'callback': (this.props.verifyCallback) ? this.props.verifyCallback : undefined,
-          'theme': this.props.theme,
-          'type': this.props.type
+          sitekey: this.props.sitekey,
+          callback: (this.props.verifyCallback) ? this.props.verifyCallback : undefined,
+          theme: this.props.theme,
+          type: this.props.type
         });
 
         if (this.props.onloadCallback) {
           this.props.onloadCallback();
         }
-      }.bind(this);
+      };
+
       return (
         <div id={this.props.elementID}
           data-onloadcallbackname={this.props.onloadCallbackName}
@@ -50,17 +50,18 @@ var Recaptcha = React.createClass({
           >
         </div>
       );
-    } else {
-      return (
-        <div className="g-recaptcha"
-          data-sitekey={this.props.sitekey}
-          data-theme={this.props.theme}
-          data-type={this.props.type}
-          >
-        </div>
-      );
     }
-  }
-});
 
-module.exports = Recaptcha;
+    return (
+      <div className="g-recaptcha"
+        data-sitekey={this.props.sitekey}
+        data-theme={this.props.theme}
+        data-type={this.props.type}
+        >
+      </div>
+    );
+  }
+}
+
+Recaptcha.propTypes = propTypes;
+Recaptcha.defaultProps = defaultProps;

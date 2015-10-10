@@ -1,6 +1,9 @@
-import "babel-core/polyfill";
-import React from "react";
-import Recaptcha from "../src";
+import 'babel-core/polyfill';
+import React from 'react';
+import Recaptcha from '../src';
+
+// site key
+let sitekey = 'xxxxxxxx';
 
 // specifying your onload callback function
 let callback = () => {
@@ -16,7 +19,7 @@ let App = React.createClass({
     return (
       <div>
         <Recaptcha
-          sitekey="xxxxxxxxxxxxxxxxxxx"
+          sitekey={sitekey}
           render="explicit"
           verifyCallback={verifyCallback}
           onloadCallback={callback}
