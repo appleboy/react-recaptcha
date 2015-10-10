@@ -1,5 +1,3 @@
-'use strict';
-
 import React from 'react';
 
 const propTypes = {
@@ -35,7 +33,7 @@ export default class Recaptcha extends React.Component {
           sitekey: this.props.sitekey,
           callback: (this.props.verifyCallback) ? this.props.verifyCallback : undefined,
           theme: this.props.theme,
-          type: this.props.type
+          type: this.props.type,
         });
 
         if (this.props.onloadCallback) {

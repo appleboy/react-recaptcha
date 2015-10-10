@@ -3,18 +3,18 @@ import React from 'react';
 import Recaptcha from '../src';
 
 // site key
-let sitekey = 'xxxxxxxx';
+const sitekey = 'xxxxxxxx';
 
 // specifying your onload callback function
-let callback = () => {
+const callback = () => {
   console.log('Done!!!!');
 };
 
-let verifyCallback = (response) => {
+const verifyCallback = (response) => {
   console.log(response);
 };
 
-let App = React.createClass({
+class App extends React.Component {
   render() {
     return (
       <div>
@@ -27,6 +27,6 @@ let App = React.createClass({
       </div>
     );
   }
-});
+}
 
 React.render(<App />, document.getElementById('app'));

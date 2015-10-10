@@ -1,0 +1,10 @@
+{
+  "extends": "airbnb",
+  "globals": {
+    "grecaptcha": true,
+    "console": true
+  },
+  "rules": {
+    "no-console": 0
+  }
+}
