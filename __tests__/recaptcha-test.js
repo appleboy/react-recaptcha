@@ -1,18 +1,13 @@
 jest.dontMock('../src/index');
 
-import React from 'react/addons';
-let TestUtils = React.addons.TestUtils;
-let Recaptcha;
+import React from 'react';
+import ReactTestUtils from 'react-addons-test-utils';
+import Recaptcha from '../src/index';
 
 describe('Recaptcha Test', () => {
-
-  beforeEach(function() {
-    Recaptcha = require('../src/index');
-  });
-
-  it('should exists', function() {
+  it('should exists', () => {
     // Render into document
-    let recaptcha = TestUtils.renderIntoDocument(<Recaptcha sitekey="123456789" />);
-    expect(TestUtils.isCompositeComponent(recaptcha)).toBeTruthy();
+    let recaptcha = ReactTestUtils.renderIntoDocument(<Recaptcha sitekey="123456789" />);
+    expect(ReactTestUtils.isCompositeComponent(recaptcha)).toBeTruthy();
   });
 });
