@@ -1,5 +1,6 @@
 import 'babel-core/polyfill';
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Recaptcha from '../src';
 
 // site key
@@ -35,4 +36,4 @@ class App extends React.Component {
   }
 }
 
-React.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));

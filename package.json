@@ -25,9 +25,6 @@
     "url": "https://github.com/appleboy/react-recaptcha/issues"
   },
   "homepage": "https://github.com/appleboy/react-recaptcha",
-  "peerDependencies": {
-    "react": "^0.13.3 || ^0.14.0-rc1"
-  },
   "devDependencies": {
     "babel-core": "^5.8.25",
     "babel-eslint": "^4.1.3",
@@ -38,6 +35,8 @@
     "eslint-plugin-react": "^3.5.1",
     "jest": "^0.1.40",
     "jest-cli": "^0.5.4",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
     "react-hot-loader": "^1.3.0",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.0"

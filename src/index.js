@@ -27,7 +27,7 @@ const defaultProps = {
   theme: 'light',
   type: 'image',
   size: 'normal',
-  tabindex: 0,
+  tabindex: "0",
 };
 
 export default class Recaptcha extends React.Component {
