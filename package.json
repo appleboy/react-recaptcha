@@ -5,7 +5,6 @@
   "main": "dist/react-recaptcha.js",
   "scripts": {
     "start": "babel-node example/server.js",
-    "prebuild": "rm -rf dist",
     "build": "webpack -p --config webpack.production.config.js",
     "lint": "eslint src example",
     "test": "jest"

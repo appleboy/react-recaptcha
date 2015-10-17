@@ -11,17 +11,23 @@ const propTypes = {
   theme: React.PropTypes.string,
   type: React.PropTypes.string,
   verifyCallbackName: React.PropTypes.string,
+  size: React.PropTypes.string,
+  tabindex: React.PropTypes.string,
 };
 
 const defaultProps = {
   elementID: 'g-recaptcha',
   onloadCallback: undefined,
   onloadCallbackName: 'onloadCallback',
-  verifyCallbackName: 'verifyCallback',
   verifyCallback: undefined,
+  verifyCallbackName: 'verifyCallback',
+  expiredCallback: undefined,
+  expiredCallbackName: 'expiredCallback',
   render: 'onload',
   theme: 'light',
   type: 'image',
+  size: 'normal',
+  tabindex: 0,
 };
 
 export default class Recaptcha extends React.Component {
@@ -34,6 +40,9 @@ export default class Recaptcha extends React.Component {
           callback: (this.props.verifyCallback) ? this.props.verifyCallback : undefined,
           theme: this.props.theme,
           type: this.props.type,
+          size: this.props.size,
+          tabindex: this.props.tabindex,
+          'expired-callback': (this.props.expiredCallback) ? this.props.expiredCallback : undefined,
         });
 
         if (this.props.onloadCallback) {
@@ -55,6 +64,8 @@ export default class Recaptcha extends React.Component {
         data-sitekey={this.props.sitekey}
         data-theme={this.props.theme}
         data-type={this.props.type}
+        data-size={this.props.size}
+        data-tabindex={this.props.tabindex}
         >
       </div>
     );
