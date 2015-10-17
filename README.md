@@ -65,7 +65,7 @@ Jsx example code: `build/index.js`
 ```javascript
 var Recaptcha = require('react-recaptcha');
 
-React.render(
+ReactDOM.render(
   <Recaptcha
     sitekey="xxxxxxxxxxxxxxxxxxxx"
   />,
@@ -101,7 +101,7 @@ var callback = function () {
   console.log('Done!!!!');
 };
 
-React.render(
+ReactDOM.render(
   <Recaptcha
     sitekey="xxxxxxxxxxxxxxxxxxxx"
     render="explicit"
@@ -126,7 +126,7 @@ var verifyCallback = function (response) {
   console.log(response);
 };
 
-React.render(
+ReactDOM.render(
   <Recaptcha
     sitekey="xxxxxxxxxxxxxxxxxxxx"
     render="explicit"
@@ -140,7 +140,7 @@ React.render(
 Change the color theme of the widget. Please `theme` property `light|dark`. Default value is `light`.
 
 ```javascript
-React.render(
+ReactDOM.render(
   <Recaptcha
     sitekey="xxxxxxxxxxxxxxxxxxxx"
     theme="dark"
@@ -152,7 +152,7 @@ React.render(
 Change the type of CAPTCHA to serve. Please `type` property `audio|image`. Default value is `image`.
 
 ```javascript
-React.render(
+ReactDOM.render(
   <Recaptcha
     sitekey="xxxxxxxxxxxxxxxxxxxx"
     type="audio"
