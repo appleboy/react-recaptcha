@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import Recaptcha from '../src';
 
 // site key
-const sitekey = '6LdX_f4SAAAAAAAawpsqhQsfJK2ToPV7g_BnOA91';
+const sitekey = 'xxxxxxxx';
 
 // specifying your onload callback function
 const callback = () => {

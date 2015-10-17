@@ -33,6 +33,15 @@ $ npm install --save react-recaptcha
 
 # Usage
 
+You can see the [full example](./example) by follwing steps.
+
+```
+$ npm install
+$ npm start
+```
+
+open the `http://localhost:3000` in your browser.
+
 ### Automatically render the reCAPTCHA widget
 
 Html example code:
