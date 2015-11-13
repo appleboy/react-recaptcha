@@ -19,6 +19,10 @@
     "reCAPTCHA",
     "component"
   ],
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
   "author": "Bo-Yi Wu",
   "license": "BSD",
   "bugs": {
@@ -27,14 +31,14 @@
   "homepage": "https://github.com/appleboy/react-recaptcha",
   "devDependencies": {
     "babel-core": "^5.8.25",
-    "babel-eslint": "^4.1.3",
     "babel-jest": "^5.3.0",
     "babel-loader": "^5.3.2",
-    "eslint": "^1.6.0",
-    "eslint-config-airbnb": "^0.1.0",
-    "eslint-plugin-react": "^3.5.1",
+    "eslint": "^1.9.0",
+    "eslint-config-airbnb": "^1.0.0",
+    "eslint-plugin-react": "^3.8.0",
     "jest": "^0.1.40",
     "jest-cli": "^0.5.4",
+    "pre-commit": "^1.1.2",
     "react": "^0.14.0",
     "react-addons-test-utils": "^0.14.0",
     "react-dom": "^0.14.0",
