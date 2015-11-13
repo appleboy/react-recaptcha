@@ -5,9 +5,10 @@
   "main": "dist/react-recaptcha.js",
   "scripts": {
     "start": "babel-node example/server.js",
-    "build": "webpack -p --config webpack.production.config.js",
+    "compile": "webpack -p --config webpack.production.config.js",
     "lint": "eslint src example",
-    "test": "jest"
+    "test": "jest",
+    "prepublish": "npm run compile"
   },
   "repository": {
     "type": "git",
