@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import Recaptcha from '../src';
 
 // site key
-const sitekey = 'xxxxxxxx';
+const sitekey = 'xxxxxxx';
 
 // specifying your onload callback function
 const callback = () => {
@@ -23,6 +23,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <h1>Google Recaptcha</h1>
         <Recaptcha
           sitekey={sitekey}
           size="compact"

@@ -42,7 +42,24 @@ module.exports = {
     loaders: [{
       test: /\.jsx?$/,
       exclude: /node_modules/,
-      loaders: ['react-hot', 'babel-loader'],
+      loader: 'babel',
+      query: {
+        stage: 0,
+        cacheDirectory: true,
+        plugins: ['react-transform'],
+        extra: {
+          'react-transform': {
+            'transforms': [{
+              'transform': 'react-transform-hmr',
+              'imports': ['react'],
+              'locals': ['module'],
+            }, {
+              'transform': 'react-transform-catch-errors',
+              'imports': ['react', 'redbox-react'],
+            }],
+          },
+        },
+      },
     }],
   },
 
