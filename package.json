@@ -7,7 +7,7 @@
     "start": "babel-node example/server.js",
     "compile": "webpack -p --config webpack.production.config.js",
     "lint": "eslint src example",
-    "test": "NODE_ENV=production jest",
+    "test": "BABEL_ENV=production jest",
     "prepublish": "npm run compile"
   },
   "repository": {
@@ -35,6 +35,7 @@
     "babel-core": "^6.3.26",
     "babel-jest": "^6.0.1",
     "babel-loader": "^6.2.1",
+    "babel-plugin-add-module-exports": "^0.1.2",
     "babel-plugin-react-transform": "^2.0.0",
     "babel-plugin-transform-runtime": "^6.3.13",
     "babel-polyfill": "^6.3.14",
