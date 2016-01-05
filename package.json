@@ -7,7 +7,7 @@
     "start": "babel-node example/server.js",
     "compile": "webpack -p --config webpack.production.config.js",
     "lint": "eslint src example",
-    "test": "npm run compile && jest",
+    "test": "NODE_ENV=production jest",
     "prepublish": "npm run compile"
   },
   "repository": {
@@ -54,6 +54,7 @@
     "react-hot-loader": "^1.3.0",
     "react-transform-catch-errors": "^1.0.1",
     "react-transform-hmr": "^1.0.1",
+    "redbox-react": "^1.2.0",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"
   },
