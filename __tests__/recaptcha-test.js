@@ -1,8 +1,8 @@
-jest.dontMock('../dist/react-recaptcha');
+jest.dontMock('../src/index');
 
 import React from 'react';
 import ReactTestUtils from 'react-addons-test-utils';
-import Recaptcha from '../dist/react-recaptcha';
+import Recaptcha from '../src/index';
 
 describe('Recaptcha Test', () => {
   it('should exists', () => {

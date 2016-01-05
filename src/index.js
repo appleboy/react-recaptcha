@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { PropTypes, Component } from 'react';
 
 const propTypes = {
-  className: React.PropTypes.string,
-  onloadCallbackName: React.PropTypes.string,
-  elementID: React.PropTypes.string,
-  onloadCallback: React.PropTypes.func,
-  verifyCallback: React.PropTypes.func,
-  render: React.PropTypes.string,
-  sitekey: React.PropTypes.string,
-  theme: React.PropTypes.string,
-  type: React.PropTypes.string,
-  verifyCallbackName: React.PropTypes.string,
-  size: React.PropTypes.string,
-  tabindex: React.PropTypes.string,
+  className: PropTypes.string,
+  onloadCallbackName: PropTypes.string,
+  elementID: PropTypes.string,
+  onloadCallback: PropTypes.func,
+  verifyCallback: PropTypes.func,
+  expiredCallback: PropTypes.func,
+  render: PropTypes.string,
+  sitekey: PropTypes.string,
+  theme: PropTypes.string,
+  type: PropTypes.string,
+  verifyCallbackName: PropTypes.string,
+  expiredCallbackName: PropTypes.string,
+  size: PropTypes.string,
+  tabindex: PropTypes.string,
 };
 
 const defaultProps = {
@@ -30,7 +32,7 @@ const defaultProps = {
   tabindex: '0',
 };
 
-export default class Recaptcha extends React.Component {
+export default class Recaptcha extends Component {
 
   render() {
     if (this.props.render === 'explicit' && this.props.onloadCallback) {
@@ -54,8 +56,7 @@ export default class Recaptcha extends React.Component {
         <div id={this.props.elementID}
           data-onloadcallbackname={this.props.onloadCallbackName}
           data-verifycallbackname={this.props.verifyCallbackName}
-          >
-        </div>
+        ></div>
       );
     }
 
@@ -66,8 +67,7 @@ export default class Recaptcha extends React.Component {
         data-type={this.props.type}
         data-size={this.props.size}
         data-tabindex={this.props.tabindex}
-        >
-      </div>
+      ></div>
     );
   }
 }
