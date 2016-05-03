@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/appleboy/react-recaptcha",
   "devDependencies": {
-    "babel-cli": "^6.3.17",
+    "babel-cli": "^6.8.0",
     "babel-core": "^6.3.26",
     "babel-jest": "^12.0.1",
     "babel-loader": "^6.2.1",
