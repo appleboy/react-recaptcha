@@ -45,6 +45,8 @@ export default class Recaptcha extends Component {
         tabindex: this.props.tabindex,
         'expired-callback': (this.props.expiredCallback) ? this.props.expiredCallback : undefined,
       });
+
+      this.props.onloadCallback();
     }
   }
 
