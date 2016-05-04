@@ -34,24 +34,24 @@ const defaultProps = {
 
 export default class Recaptcha extends Component {
 
+  componentDidMount() {
+    if (this.props.render === 'explicit' && this.props.onloadCallback) {
+      grecaptcha.render(this.props.elementID, {
+        sitekey: this.props.sitekey,
+        callback: (this.props.verifyCallback) ? this.props.verifyCallback : undefined,
+        theme: this.props.theme,
+        type: this.props.type,
+        size: this.props.size,
+        tabindex: this.props.tabindex,
+        'expired-callback': (this.props.expiredCallback) ? this.props.expiredCallback : undefined,
+      });
+
+      this.props.onloadCallback();
+    }
+  }
+
   render() {
     if (this.props.render === 'explicit' && this.props.onloadCallback) {
-      window[this.props.onloadCallbackName] = () => {
-        grecaptcha.render(this.props.elementID, {
-          sitekey: this.props.sitekey,
-          callback: (this.props.verifyCallback) ? this.props.verifyCallback : undefined,
-          theme: this.props.theme,
-          type: this.props.type,
-          size: this.props.size,
-          tabindex: this.props.tabindex,
-          'expired-callback': (this.props.expiredCallback) ? this.props.expiredCallback : undefined,
-        });
-
-        if (this.props.onloadCallback) {
-          this.props.onloadCallback();
-        }
-      };
-
       return (
         <div id={this.props.elementID}
           data-onloadcallbackname={this.props.onloadCallbackName}
