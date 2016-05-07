@@ -49,7 +49,7 @@
     "jest": "^0.1.40",
     "jest-cli": "^12.0.1",
     "pre-commit": "^1.1.2",
-    "react": "^0.14.5",
+    "react": "^15.0.2",
     "react-addons-test-utils": "^0.14.5",
     "react-dom": "^0.14.5",
     "react-hot-loader": "^1.3.0",
