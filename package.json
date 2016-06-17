@@ -55,7 +55,7 @@
     "react-hot-loader": "^1.3.0",
     "react-transform-catch-errors": "^1.0.1",
     "react-transform-hmr": "^1.0.1",
-    "redbox-react": "^1.2.0",
+    "redbox-react": "^1.2.7",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"
   },
