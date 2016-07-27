@@ -47,7 +47,7 @@
     "eslint-config-airbnb": "^5.0.0",
     "eslint-plugin-react": "^3.14.0",
     "jest": "^13.0.0",
-    "jest-cli": "^13.0.0",
+    "jest-cli": "^13.2.1",
     "pre-commit": "^1.1.2",
     "react": "^0.14.5",
     "react-addons-test-utils": "^0.14.5",
