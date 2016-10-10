@@ -32,22 +32,59 @@ const defaultProps = {
   tabindex: '0',
 };
 
+const isReady = () => typeof window !== 'undefined' && typeof window.grecaptcha !== 'undefined';
+
+let readyCheck;
+
 export default class Recaptcha extends Component {
 
+  constructor(props) {
+    super(props);
+    this.renderGrecaptcha = this.renderGrecaptcha.bind(this);
+    this.state = {
+      ready: isReady(),
+    };
+
+    if (!this.state.ready) {
+      readyCheck = setInterval(this.updateReadyState.bind(this), 1000);
+    }
+  }
+
   componentDidMount() {
-    if (this.props.render === 'explicit' && this.props.onloadCallback) {
-      grecaptcha.render(this.props.elementID, {
-        sitekey: this.props.sitekey,
-        callback: (this.props.verifyCallback) ? this.props.verifyCallback : undefined,
-        theme: this.props.theme,
-        type: this.props.type,
-        size: this.props.size,
-        tabindex: this.props.tabindex,
-        'expired-callback': (this.props.expiredCallback) ? this.props.expiredCallback : undefined,
+    if (this.state.ready) {
+      this.renderGrecaptcha();
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { render, onloadCallback } = this.props;
+
+    if (render === 'explicit' && onloadCallback && this.state.ready && !prevState.ready) {
+      this.renderGrecaptcha();
+    }
+  }
+
+  updateReadyState() {
+    if (isReady()) {
+      this.setState({
+        ready: true,
       });
 
-      this.props.onloadCallback();
+      clearInterval(readyCheck);
     }
+  }
+
+  renderGrecaptcha() {
+    grecaptcha.render(this.props.elementID, {
+      sitekey: this.props.sitekey,
+      callback: (this.props.verifyCallback) ? this.props.verifyCallback : undefined,
+      theme: this.props.theme,
+      type: this.props.type,
+      tabindex: this.props.tabindex,
+      'expired-callback': (this.props.expiredCallback) ? this.props.expiredCallback : undefined,
+    });
+
+    this.props.onloadCallback();
   }
 
   render() {
