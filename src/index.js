@@ -64,6 +64,12 @@ export default class Recaptcha extends Component {
     }
   }
 
+  reset() {
+    if (this.state.ready) {
+      grecaptcha.reset();
+    }
+  }
+
   updateReadyState() {
     if (isReady()) {
       this.setState({
