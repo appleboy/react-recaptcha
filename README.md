@@ -161,6 +161,37 @@ ReactDOM.render(
 );
 ```
 
+### Explicitly reset the reCAPTCHA widget
+
+The reCAPTCHA widget can be manually reset by accessing the component instance via a callback ref and calling `.reset()` on the instance.
+
+```javascript
+var Recaptcha = require('react-recaptcha');
+
+// create a variable to store the component instance
+let recaptchaInstance;
+
+// create a reset function
+const resetRecaptcha = () => {
+  recaptchaInstance.reset();  
+};
+
+ReactDOM.render(
+  <div>
+    <Recaptcha
+      ref={e => recaptchaInstance = e}
+      sitekey="xxxxxxxxxxxxxxxxxxxx"
+    />
+    <button
+      onClick={resetRecaptcha}
+    >
+     Reset
+    </button>
+  </div>,
+  document.getElementById('example')
+);
+```
+
 # Contributing
 
 * 1. Fork it
