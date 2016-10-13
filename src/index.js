@@ -41,6 +41,7 @@ export default class Recaptcha extends Component {
   constructor(props) {
     super(props);
     this._renderGrecaptcha = this._renderGrecaptcha.bind(this);
+    this.reset = this.reset.bind(this);
     this.state = {
       ready: isReady(),
     };
