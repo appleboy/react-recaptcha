@@ -40,19 +40,20 @@ export default class Recaptcha extends Component {
 
   constructor(props) {
     super(props);
-    this.renderGrecaptcha = this.renderGrecaptcha.bind(this);
+    this._renderGrecaptcha = this._renderGrecaptcha.bind(this);
+    this.reset = this.reset.bind(this);
     this.state = {
       ready: isReady(),
     };
 
     if (!this.state.ready) {
-      readyCheck = setInterval(this.updateReadyState.bind(this), 1000);
+      readyCheck = setInterval(this._updateReadyState.bind(this), 1000);
     }
   }
 
   componentDidMount() {
     if (this.state.ready) {
-      this.renderGrecaptcha();
+      this._renderGrecaptcha();
     }
   }
 
@@ -60,11 +61,17 @@ export default class Recaptcha extends Component {
     const { render, onloadCallback } = this.props;
 
     if (render === 'explicit' && onloadCallback && this.state.ready && !prevState.ready) {
-      this.renderGrecaptcha();
+      this._renderGrecaptcha();
     }
   }
 
-  updateReadyState() {
+  reset() {
+    if (this.state.ready) {
+      grecaptcha.reset();
+    }
+  }
+
+  _updateReadyState() {
     if (isReady()) {
       this.setState({
         ready: true,
@@ -74,7 +81,7 @@ export default class Recaptcha extends Component {
     }
   }
 
-  renderGrecaptcha() {
+  _renderGrecaptcha() {
     grecaptcha.render(this.props.elementID, {
       sitekey: this.props.sitekey,
       callback: (this.props.verifyCallback) ? this.props.verifyCallback : undefined,
