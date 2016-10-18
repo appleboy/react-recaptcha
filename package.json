@@ -8,7 +8,7 @@
     "compile": "webpack -p --config webpack.production.config.js",
     "lint": "eslint src example",
     "test": "BABEL_ENV=production jest",
-    "prepublish": "npm run compile"
+    "prepublish": "NODE_ENV=production npm run compile"
   },
   "repository": {
     "type": "git",
