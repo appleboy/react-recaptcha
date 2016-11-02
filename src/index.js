@@ -87,6 +87,7 @@ export default class Recaptcha extends Component {
       callback: (this.props.verifyCallback) ? this.props.verifyCallback : undefined,
       theme: this.props.theme,
       type: this.props.type,
+      size: this.props.size,
       tabindex: this.props.tabindex,
       'expired-callback': (this.props.expiredCallback) ? this.props.expiredCallback : undefined,
     });
