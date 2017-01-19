@@ -44,6 +44,7 @@ export default class Recaptcha extends Component {
     this.reset = this.reset.bind(this);
     this.state = {
       ready: isReady(),
+      widget: null
     };
 
     if (!this.state.ready) {
@@ -70,8 +71,9 @@ export default class Recaptcha extends Component {
   }
 
   reset() {
-    if (this.state.ready) {
-      grecaptcha.reset();
+    const { ready, widget } = this.state;
+    if (ready && widget !== null) {
+      grecaptcha.reset(widget);
     }
   }
 
@@ -86,7 +88,7 @@ export default class Recaptcha extends Component {
   }
 
   _renderGrecaptcha() {
-    grecaptcha.render(this.props.elementID, {
+    this.state.widget = grecaptcha.render(this.props.elementID, {
       sitekey: this.props.sitekey,
       callback: (this.props.verifyCallback) ? this.props.verifyCallback : undefined,
       theme: this.props.theme,
