@@ -44,7 +44,7 @@ export default class Recaptcha extends Component {
     this.reset = this.reset.bind(this);
     this.state = {
       ready: isReady(),
-      widget: null
+      widget: null,
     };
 
     if (!this.state.ready) {
