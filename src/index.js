@@ -112,7 +112,8 @@ export default class Recaptcha extends Component {
     }
 
     return (
-      <div className="g-recaptcha"
+      <div id={this.props.elementID}
+        className="g-recaptcha"
         data-sitekey={this.props.sitekey}
         data-theme={this.props.theme}
         data-type={this.props.type}
