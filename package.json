@@ -20,6 +20,9 @@
     "reCAPTCHA",
     "component"
   ],
+  "pre-commit": [
+    "compile"
+  ],
   "author": "Bo-Yi Wu",
   "license": "BSD",
   "bugs": {
