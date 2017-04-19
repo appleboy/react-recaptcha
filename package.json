@@ -5,10 +5,10 @@
   "main": "dist/react-recaptcha.js",
   "scripts": {
     "start": "babel-node example/server.js",
-    "compile": "webpack -p --config webpack.production.config.js",
+    "compile": "cross-env NODE_ENV=production webpack --config webpack.production.config.js",
     "lint": "eslint src example",
-    "test": "BABEL_ENV=production jest",
-    "prepublish": "NODE_ENV=production npm run compile"
+    "test": "cross-env BABEL_ENV=production jest",
+    "prepublish": "cross-env NODE_ENV=production npm run compile"
   },
   "repository": {
     "type": "git",
@@ -20,10 +20,10 @@
     "reCAPTCHA",
     "component"
   ],
-  "pre-commit": [
-    "lint",
-    "test"
-  ],
+  // "pre-commit": [
+  //   "lint",
+  //   "test"
+  // ],
   "author": "Bo-Yi Wu",
   "license": "BSD",
   "bugs": {
@@ -43,19 +43,20 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
     "babel-runtime": "^6.3.19",
+    "cross-env": "^4.0.0",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^5.0.0",
     "eslint-plugin-react": "^3.14.0",
     "jest": "^14.0.0",
     "jest-cli": "^14.0.1",
     "pre-commit": "^1.1.2",
-    "react": "^0.14.5",
-    "react-addons-test-utils": "^0.14.5",
-    "react-dom": "^0.14.5",
-    "react-hot-loader": "^1.3.0",
-    "react-transform-catch-errors": "^1.0.1",
-    "react-transform-hmr": "^1.0.1",
-    "redbox-react": "^1.2.0",
+    "react": "^15.5.4",
+    "react-addons-test-utils": "^15.5.1",
+    "react-dom": "^15.5.4",
+    "react-hot-loader": "^1.3.1",
+    "react-transform-catch-errors": "^1.0.2",
+    "react-transform-hmr": "^1.0.4",
+    "redbox-react": "^1.3.6",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"
   },
