@@ -20,10 +20,6 @@
     "reCAPTCHA",
     "component"
   ],
-  // "pre-commit": [
-  //   "lint",
-  //   "test"
-  // ],
   "author": "Bo-Yi Wu",
   "license": "BSD",
   "bugs": {
