@@ -15,6 +15,7 @@ const propTypes = {
   expiredCallbackName: PropTypes.string,
   size: PropTypes.string,
   tabindex: PropTypes.string,
+  hl: PropTypes.string,
 };
 
 const defaultProps = {
@@ -30,6 +31,7 @@ const defaultProps = {
   type: 'image',
   size: 'normal',
   tabindex: '0',
+  hl: 'en',
 };
 
 const isReady = () => typeof window !== 'undefined' && typeof window.grecaptcha !== 'undefined';
@@ -95,6 +97,7 @@ export default class Recaptcha extends Component {
       type: this.props.type,
       size: this.props.size,
       tabindex: this.props.tabindex,
+      hl: this.props.hl,
       'expired-callback': (this.props.expiredCallback) ? this.props.expiredCallback : undefined,
     });
 
