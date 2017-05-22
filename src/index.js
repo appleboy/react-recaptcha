@@ -43,6 +43,7 @@ export default class Recaptcha extends Component {
   constructor(props) {
     super(props);
     this._renderGrecaptcha = this._renderGrecaptcha.bind(this);
+    this.execute = this.execute.bind(this);
     this.reset = this.reset.bind(this);
     this.state = {
       ready: isReady(),
@@ -70,6 +71,13 @@ export default class Recaptcha extends Component {
 
   componentWillUnmount() {
     clearInterval(readyCheck);
+  }
+
+  execute() {
+    const { ready, widget } = this.state;
+    if (ready && widget !== null) {
+      grecaptcha.execute(widget);
+    }
   }
 
   reset() {
