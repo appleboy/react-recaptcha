@@ -2,10 +2,12 @@
   "extends": "airbnb",
   "globals": {
     "grecaptcha": true,
-    "console": true
+    "console": true,
+    "window": true
   },
   "rules": {
     "no-console": 0,
-    "react/jsx-no-bind": 0
+    "react/jsx-no-bind": 0,
+    "react/jsx-filename-extension": 0
   }
 }

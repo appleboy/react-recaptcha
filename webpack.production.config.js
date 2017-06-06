@@ -31,14 +31,16 @@ module.exports = {
   ],
 
   module: {
-    loaders: [{
+    rules: [{
       test: /\.jsx?$/,
       exclude: /node_modules/,
-      loader: 'babel'
+      use: [ {
+        loader: 'babel-loader'
+      } ]
     }]
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['.js', '.jsx']
   }
 };
