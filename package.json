@@ -31,8 +31,8 @@
   },
   "homepage": "https://github.com/appleboy/react-recaptcha",
   "peerDependencies": {
-    "react": "^15.5.4",
-    "prop-types": "^15.5.10"
+    "react": "^0.14.5 || ^15.0.0",
+    "prop-types": "^15.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.8.0",
