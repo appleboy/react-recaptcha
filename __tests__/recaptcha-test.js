@@ -1,7 +1,7 @@
 jest.dontMock('../src/index');
 
 import React from 'react';
-import ReactTestUtils from 'react-addons-test-utils';
+import ReactTestUtils from 'react-dom/test-utils';
 import Recaptcha from '../src/index';
 
 describe('Recaptcha Test', () => {
