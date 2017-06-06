@@ -73,5 +73,6 @@
       "<rootDir>/node_modules/react"
     ]
   },
-  "dependencies": {}
+  "dependencies": {},
+  "license": "BSD-3-Clause"
 }
