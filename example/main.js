@@ -1,3 +1,5 @@
+/* global document */
+/* eslint-disable import/no-extraneous-dependencies */
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -16,7 +18,7 @@ const verifyCallback = (response) => {
 };
 
 const expiredCallback = () => {
-  console.log(`Recaptcha expired`);
+  console.log('Recaptcha expired');
 };
 
 // define a variable to store the recaptcha instance
@@ -33,7 +35,7 @@ class App extends React.Component {
       <div>
         <h1>Google Recaptcha</h1>
         <Recaptcha
-          ref={e => recaptchaInstance = e}
+          ref={(e) => { recaptchaInstance = e; }}
           sitekey={sitekey}
           size="compact"
           render="explicit"
@@ -41,7 +43,7 @@ class App extends React.Component {
           onloadCallback={callback}
           expiredCallback={expiredCallback}
         />
-        <br/>
+        <br />
         <button
           onClick={resetRecaptcha}
         >

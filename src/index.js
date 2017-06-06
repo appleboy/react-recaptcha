@@ -1,7 +1,8 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 const propTypes = {
-  className: PropTypes.string,
+  className: PropTypes.string, // eslint-disable-line
   onloadCallbackName: PropTypes.string,
   elementID: PropTypes.string,
   onloadCallback: PropTypes.func,
@@ -12,12 +13,13 @@ const propTypes = {
   theme: PropTypes.string,
   type: PropTypes.string,
   verifyCallbackName: PropTypes.string,
-  expiredCallbackName: PropTypes.string,
+  expiredCallbackName: PropTypes.string, // eslint-disable-line
   size: PropTypes.string,
   tabindex: PropTypes.string,
 };
 
 const defaultProps = {
+  sitekey: '',
   elementID: 'g-recaptcha',
   onloadCallback: undefined,
   onloadCallbackName: 'onloadCallback',
@@ -40,7 +42,7 @@ export default class Recaptcha extends Component {
 
   constructor(props) {
     super(props);
-    this._renderGrecaptcha = this._renderGrecaptcha.bind(this);
+    this.renderGrecaptcha = this.renderGrecaptcha.bind(this);
     this.reset = this.reset.bind(this);
     this.state = {
       ready: isReady(),
@@ -48,13 +50,13 @@ export default class Recaptcha extends Component {
     };
 
     if (!this.state.ready) {
-      readyCheck = setInterval(this._updateReadyState.bind(this), 1000);
+      readyCheck = setInterval(this.updateReadyState.bind(this), 1000);
     }
   }
 
   componentDidMount() {
     if (this.state.ready) {
-      this._renderGrecaptcha();
+      this.renderGrecaptcha();
     }
   }
 
@@ -62,7 +64,7 @@ export default class Recaptcha extends Component {
     const { render, onloadCallback } = this.props;
 
     if (render === 'explicit' && onloadCallback && this.state.ready && !prevState.ready) {
-      this._renderGrecaptcha();
+      this.renderGrecaptcha();
     }
   }
 
@@ -77,7 +79,7 @@ export default class Recaptcha extends Component {
     }
   }
 
-  _updateReadyState() {
+  updateReadyState() {
     if (isReady()) {
       this.setState({
         ready: true,
@@ -87,7 +89,7 @@ export default class Recaptcha extends Component {
     }
   }
 
-  _renderGrecaptcha() {
+  renderGrecaptcha() {
     this.state.widget = grecaptcha.render(this.props.elementID, {
       sitekey: this.props.sitekey,
       callback: (this.props.verifyCallback) ? this.props.verifyCallback : undefined,
@@ -104,21 +106,23 @@ export default class Recaptcha extends Component {
   render() {
     if (this.props.render === 'explicit' && this.props.onloadCallback) {
       return (
-        <div id={this.props.elementID}
+        <div
+          id={this.props.elementID}
           data-onloadcallbackname={this.props.onloadCallbackName}
           data-verifycallbackname={this.props.verifyCallbackName}
-        ></div>
+        />
       );
     }
 
     return (
-      <div className="g-recaptcha"
+      <div
+        className="g-recaptcha"
         data-sitekey={this.props.sitekey}
         data-theme={this.props.theme}
         data-type={this.props.type}
         data-size={this.props.size}
         data-tabindex={this.props.tabindex}
-      ></div>
+      />
     );
   }
 }
