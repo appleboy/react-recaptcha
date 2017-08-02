@@ -102,7 +102,9 @@ export default class Recaptcha extends Component {
       'expired-callback': (this.props.expiredCallback) ? this.props.expiredCallback : undefined,
     });
 
-    this.props.onloadCallback();
+    if (this.props.onloadCallback) {
+      this.props.onloadCallback();
+    }
   }
 
   render() {
@@ -111,7 +113,7 @@ export default class Recaptcha extends Component {
         <div id={this.props.elementID}
           data-onloadcallbackname={this.props.onloadCallbackName}
           data-verifycallbackname={this.props.verifyCallbackName}
-        ></div>
+        />
       );
     }
 
@@ -123,7 +125,7 @@ export default class Recaptcha extends Component {
         data-type={this.props.type}
         data-size={this.props.size}
         data-tabindex={this.props.tabindex}
-      ></div>
+      />
     );
   }
 }
