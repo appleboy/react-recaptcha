@@ -17,6 +17,7 @@ const propTypes = {
   size: PropTypes.string,
   tabindex: PropTypes.string,
   hl: PropTypes.string,
+  badge: PropTypes.string,
 };
 
 const defaultProps = {
@@ -33,6 +34,7 @@ const defaultProps = {
   size: 'normal',
   tabindex: '0',
   hl: 'en',
+  badge: 'bottomright',
 };
 
 const isReady = () => typeof window !== 'undefined' && typeof window.grecaptcha !== 'undefined';
@@ -99,6 +101,7 @@ export default class Recaptcha extends Component {
       size: this.props.size,
       tabindex: this.props.tabindex,
       hl: this.props.hl,
+      badge: this.props.badge,
       'expired-callback': (this.props.expiredCallback) ? this.props.expiredCallback : undefined,
     });
 
@@ -124,6 +127,7 @@ export default class Recaptcha extends Component {
         data-theme={this.props.theme}
         data-type={this.props.type}
         data-size={this.props.size}
+        data-badge={this.props.badge}
         data-tabindex={this.props.tabindex}
       />
     );
