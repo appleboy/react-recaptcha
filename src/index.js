@@ -37,18 +37,23 @@ const defaultProps = {
   badge: 'bottomright',
 };
 
-const isReady = () => typeof window !== 'undefined' && typeof window.grecaptcha !== 'undefined';
+const contextTypes = {
+  window: PropTypes.any,
+  document: PropTypes.any,
+};
 
 let readyCheck;
 
 export default class Recaptcha extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this._renderGrecaptcha = this._renderGrecaptcha.bind(this);
     this.reset = this.reset.bind(this);
+    this._isReady = this.isReady.bind(this);
+    this._window = this.context.window || window;
     this.state = {
-      ready: isReady(),
+      ready: this._isReady(),
       widget: null,
     };
 
@@ -75,15 +80,19 @@ export default class Recaptcha extends Component {
     clearInterval(readyCheck);
   }
 
+  isReady() {
+    return (typeof this._window !== 'undefined' && typeof this._window.grecaptcha !== 'undefined');
+  }
+
   reset() {
     const { ready, widget } = this.state;
     if (ready && widget !== null) {
-      grecaptcha.reset(widget);
+      this._window.grecaptcha.reset(widget);
     }
   }
 
   _updateReadyState() {
-    if (isReady()) {
+    if (this._isReady()) {
       this.setState({
         ready: true,
       });
@@ -93,7 +102,7 @@ export default class Recaptcha extends Component {
   }
 
   _renderGrecaptcha() {
-    this.state.widget = grecaptcha.render(this.props.elementID, {
+    this.state.widget = this._window.grecaptcha.render(this.props.elementID, {
       sitekey: this.props.sitekey,
       callback: (this.props.verifyCallback) ? this.props.verifyCallback : undefined,
       theme: this.props.theme,
@@ -136,3 +145,4 @@ export default class Recaptcha extends Component {
 
 Recaptcha.propTypes = propTypes;
 Recaptcha.defaultProps = defaultProps;
+Recaptcha.contextTypes = contextTypes;
