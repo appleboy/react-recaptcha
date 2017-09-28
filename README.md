@@ -36,7 +36,7 @@ $ npm install --save react-recaptcha
 You can see the [full example](./example) by follwing steps.
 
 ```
-$ npm install
+$ npm install [OR] yarn
 $ npm start
 ```
 
