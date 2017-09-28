@@ -11,10 +11,12 @@ const callback = () => {
   console.log('Done!!!!');
 };
 
-const verifyCallback = (response) => {
+// Callback to be executed when user is verified
+const verifyCallback = response => {
   console.log(response);
 };
 
+// Callback to be executed when reCaptcha is expired
 const expiredCallback = () => {
   console.log(`Recaptcha expired`);
 };
@@ -42,14 +44,13 @@ class App extends React.Component {
           expiredCallback={expiredCallback}
         />
         <br/>
-        <button
-          onClick={resetRecaptcha}
-        >
-          Reset
-        </button>
+        <button onClick={resetRecaptcha} >Reset</button>
       </div>
     );
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(
+  <App />,
+  document.getElementById('app')
+);
