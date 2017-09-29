@@ -29,6 +29,7 @@ Install package via [node.js](http://nodejs.org/)
 
 ```bash
 $ npm i react-recaptcha
+yarn add react-recaptcha
 ```
 
 # Usage
