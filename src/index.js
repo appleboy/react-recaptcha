@@ -57,7 +57,7 @@ export default class Recaptcha extends Component {
     }
   }
 
-  componentDidMount() {
+  componentDidMount(){
     if (this.state.ready) {
       this._renderGrecaptcha();
     }

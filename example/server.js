@@ -13,7 +13,7 @@ new WebpackDevServer(webpack(config), {
     cached: false,
     cachedAssets: false,
   },
-}).listen(config.port, '0.0.0.0', (err) => {
+}).listen(config.port, '0.0.0.0', err => {
   if (err) {
     console.log(err);
   }
