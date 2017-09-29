@@ -43,41 +43,51 @@ let readyCheck;
 
 export default class Recaptcha extends Component {
 
-  state = {
-    ready: isReady(),
-    widget: null,
-  };
-
-  componentDidMount = () => {
-    let { ready } = this.state;
-    ready ? this._renderGrecaptcha() : readyCheck = setInterval(this._updateReadyState.bind(this), 1000);
+  constructor(props) {
+    super(props);
+    this.state = {
+      ready: isReady(),
+      widget: null,
+    };
+    if (!this.state.ready) {
+      readyCheck = setInterval(this._updateReadyState.bind(this), 1000);
+    }
   }
 
-  componentDidUpdate = (prevProps, prevState) => {
+  componentDidMount() {
+    const { ready } = this.state;
+    if (ready) {
+      this._renderGrecaptcha();
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
     const { render, onloadCallback } = this.props;
     if (render === 'explicit' && onloadCallback && this.state.ready && !prevState.ready) {
       this._renderGrecaptcha();
     }
   }
 
-  componentWillUnmount = () => clearInterval(readyCheck);
+  componentWillUnmount() {
+    clearInterval(readyCheck);
+  }
 
-  reset = () => {
+  reset() {
     const { ready, widget } = this.state;
     if (ready && widget !== null) {
       grecaptcha.reset(widget);
     }
   }
 
-  _updateReadyState = () => {
+  _updateReadyState() {
     if (isReady()) {
       this.setState({ ready: true });
       clearInterval(readyCheck);
     }
   }
 
-  _renderGrecaptcha = () => {
-    let {
+  _renderGrecaptcha() {
+    const {
       elementID,
       sitekey,
       verifyCallback,
@@ -88,7 +98,7 @@ export default class Recaptcha extends Component {
       hl,
       badge,
       expiredCallback,
-      onloadCallback
+      onloadCallback,
     } = this.props;
 
     this.state.widget = grecaptcha.render(elementID, {
@@ -109,7 +119,7 @@ export default class Recaptcha extends Component {
   }
 
   render() {
-    let {
+    const {
       render,
       onloadCallback,
       elementID,
@@ -120,7 +130,7 @@ export default class Recaptcha extends Component {
       type,
       size,
       badge,
-      tabindex
+      tabindex,
     } = this.props;
 
     if (render === 'explicit' && onloadCallback) {
