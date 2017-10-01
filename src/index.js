@@ -88,17 +88,7 @@ export default class Recaptcha extends Component {
 
   _renderGrecaptcha() {
     const {
-      elementID,
-      sitekey,
-      verifyCallback,
-      theme,
-      type,
-      size,
-      tabindex,
-      hl,
-      badge,
-      expiredCallback,
-      onloadCallback,
+      elementID, sitekey, verifyCallback, theme, type, size, tabindex, hl, badge, expiredCallback, onloadCallback,
     } = this.props;
 
     this.state.widget = grecaptcha.render(elementID, {
@@ -120,17 +110,7 @@ export default class Recaptcha extends Component {
 
   render() {
     const {
-      render,
-      onloadCallback,
-      elementID,
-      onloadCallbackName,
-      verifyCallbackName,
-      sitekey,
-      theme,
-      type,
-      size,
-      badge,
-      tabindex,
+      render, onloadCallback, elementID, onloadCallbackName, verifyCallbackName, sitekey, theme, type, size, badge, tabindex,
     } = this.props;
 
     if (render === 'explicit' && onloadCallback) {
