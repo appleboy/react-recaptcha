@@ -1,2 +1,11 @@
-src
+__tests__
 .babelrc
+.editorconfig
+.eslintrc
+.npmignore
+.travis.yml
+.yarn-cache
+example
+src
+webpack.production.config.js
+yarn.lock
