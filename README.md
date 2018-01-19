@@ -191,6 +191,52 @@ ReactDOM.render(
   document.getElementById('example')
 );
 ```
+## Component props
+
+### Available props
+
+The following props can be passed into the React reCAPTCHA component. These can also be viewed in the [source code](https://github.com/appleboy/react-recaptcha/blob/master/src/index.js#L4-L21)
+
+* `className` : the class for the reCAPTCHA div.
+* `onloadCallbackName` : the name of your onloadCallback function (see `onloadCallback` below).
+* `elementID` : the #id for the reCAPTCHA div.
+* `onloadCallback` : the callback to pass into the reCAPTCHA API if [rendering the reCAPTCHA explicitly](https://github.com/appleboy/react-recaptcha#explicitly-render-the-recaptcha-widget).
+* `verifyCallback` : the callback that fires after reCAPTCHA has verified a user.
+* `expiredCallback` : optional. A callback to pass into the reCAPTCHA if the reCAPTCHA response has expired.
+* `render` : specifies the render type for the component (e.g. explicit), see `onloadCallback` and [explicit rendering](https://github.com/appleboy/react-recaptcha#explicitly-render-the-recaptcha-widget).
+* `sitekey` : the sitekey for the reCAPTCHA widget, obtained after signing up for an API key.
+* `theme` : the color theme for the widget, either light or dark.
+* `type` : the type of reCAPTCHA you'd like to render, list of reCAPTCHA types [available here](https://developers.google.com/recaptcha/docs/versions).
+* `verifyCallbackName` : the name of your verifyCallback function, see `verifyCallback` above.
+* `expiredCallbackName` : the name of your expiredCallbackName function, see `expiredCallback` above.
+* `size` : the desired size of the reCAPTCHA widget, can be either 'compact' or 'normal'.
+* `tabindex` : optional: The tabindex of the widget and challenge. If other elements in your page use tabindex, it should be set to make user navigation easier. More info on tabindex [available here](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex).
+* `hl` : optional. Forces the widget to render in a specific language. Auto-detects the user's language if unspecified. List of language codes [available here](https://developers.google.com/recaptcha/docs/language).
+* `badge` : optional. Reposition the reCAPTCHA badge. 'inline' allows you to control the CSS.
+
+### Default props
+
+If not specified when rendering the component, the following props will be passed into the reCAPTCHA widget:
+
+```javascript
+  {
+    elementID: 'g-recaptcha',
+    onloadCallback: undefined,
+    onloadCallbackName: 'onloadCallback',
+    verifyCallback: undefined,
+    verifyCallbackName: 'verifyCallback',
+    expiredCallback: undefined,
+    expiredCallbackName: 'expiredCallback',
+    render: 'onload',
+    theme: 'light',
+    type: 'image',
+    size: 'normal',
+    tabindex: '0',
+    hl: 'en',
+    badge: 'bottomright',
+  };
+```
+
 
 # Contributing
 
