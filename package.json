@@ -7,7 +7,8 @@
     "start": "babel-node example/server.js",
     "compile": "webpack -p --config webpack.production.config.js",
     "lint": "eslint src example",
-    "test": "BABEL_ENV=production jest --watch",
+    "test": "BABEL_ENV=production jest",
+    "test:watch": "BABEL_ENV=production jest --watch",
     "prepublish": "NODE_ENV=production npm run compile"
   },
   "repository": {
