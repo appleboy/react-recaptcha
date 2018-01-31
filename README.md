@@ -42,6 +42,10 @@ $ npm start
 
 open the `http://localhost:3000` in your browser.
 
+# Node support
+
+Node >= v6 is required for this package. Run `node -v` in your command prompt if you're unsure which Node version you have installed.
+
 ### Automatically render the reCAPTCHA widget
 
 Html example code:
