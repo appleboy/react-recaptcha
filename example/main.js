@@ -1,47 +1,47 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
+import ReactFrame from 'react-frame-component';
 import Recaptcha from '../src';
 
 // site key
 const sitekey = 'xxxxxxx';
 
-// specifying your onload callback function
-const callback = () => {
-  console.log('Done!!!!');
-};
-
-const verifyCallback = (response) => {
-  console.log(response);
-};
-
-const expiredCallback = () => {
-  console.log(`Recaptcha expired`);
-};
-
 // define a variable to store the recaptcha instance
 let recaptchaInstance;
 
-// handle reset
-const resetRecaptcha = () => {
-  recaptchaInstance.reset();
-};
-
 class App extends React.Component {
   render() {
-    return (
+    // specifying your onload callback function
+    const callback = () => {
+      console.log('Done!!!!');
+    };
+
+    const verifyCallback = (response) => {
+      console.log(response);
+    };
+
+    const expiredCallback = () => {
+      console.log(`Recaptcha expired`);
+    };
+
+    // handle reset
+    const resetRecaptcha = () => {
+      recaptchaInstance.reset();
+    };
+
+    const content = (
       <div>
         <h1>Google Recaptcha</h1>
         <Recaptcha
-          ref={e => recaptchaInstance = e}
+          ref={e => this.recaptchaInstance = e}
           sitekey={sitekey}
-          size="compact"
-          render="explicit"
           verifyCallback={verifyCallback}
           onloadCallback={callback}
           expiredCallback={expiredCallback}
         />
-        <br/>
+        <br />
         <button
           onClick={resetRecaptcha}
         >
@@ -49,7 +49,24 @@ class App extends React.Component {
         </button>
       </div>
     );
+
+    if (this.props.framed) {
+      return (
+        <ReactFrame
+          initialContent='<html><head><script src="https://www.google.com/recaptcha/api.js" async defer></script></head><body><div class="frame-root"></div></body></html>'
+        >
+          {content}
+        </ReactFrame>
+      );
+    }
+
+    return (<div>{content}</div>);
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+App.propTypes = {
+  framed: PropTypes.bool.isRequired,
+};
+
+ReactDOM.render(<App framed />, document.getElementById('app'));
+ReactDOM.render(<App framed={false} />, document.getElementById('app2'));
