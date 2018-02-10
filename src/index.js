@@ -82,6 +82,13 @@ export default class Recaptcha extends Component {
     }
   }
 
+  execute() {
+    const { ready, widget } = this.state;
+    if (ready && widget !== null) {
+      grecaptcha.execute(widget);
+    }
+  }
+
   _updateReadyState() {
     if (isReady()) {
       this.setState({
