@@ -6,6 +6,7 @@
   },
   "rules": {
     "no-console": 0,
-    "react/jsx-no-bind": 0
+    "react/jsx-no-bind": 0,
+    "no-unneeded-ternary": 0
   }
 }

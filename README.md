@@ -28,7 +28,8 @@ To use reCAPTCHA, you need to [sign up for an API key pair][2] for your site. Th
 Install package via [node.js](http://nodejs.org/)
 
 ```bash
-$ npm install --save react-recaptcha
+$ npm i react-recaptcha
+yarn add react-recaptcha
 ```
 
 # Usage
@@ -36,7 +37,7 @@ $ npm install --save react-recaptcha
 You can see the [full example](./example) by follwing steps.
 
 ```
-$ npm install
+$ npm install [OR] yarn
 $ npm start
 ```
 
@@ -141,7 +142,7 @@ ReactDOM.render(
 );
 ```
 
-Change the color theme of the widget. Please `theme` property `light|dark`. Default value is `light`.
+Change the color theme of the widget. `theme` property is responsible for theme of the widget. It's value can be `light|dark`. Default value is `light`.
 
 ```javascript
 ReactDOM.render(
@@ -153,7 +154,7 @@ ReactDOM.render(
 );
 ```
 
-Change the type of CAPTCHA to serve. Please `type` property `audio|image`. Default value is `image`.
+Change the type of reCAPTCHA to serve. It's type can be changed with `type` property. It can be `audio|image`. Default value is `image`.
 
 ```javascript
 ReactDOM.render(
@@ -186,11 +187,7 @@ ReactDOM.render(
       ref={e => recaptchaInstance = e}
       sitekey="xxxxxxxxxxxxxxxxxxxx"
     />
-    <button
-      onClick={resetRecaptcha}
-    >
-     Reset
-    </button>
+    <button onClick={resetRecaptcha} >Reset</button>
   </div>,
   document.getElementById('example')
 );
