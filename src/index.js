@@ -22,7 +22,7 @@ const propTypes = {
 
 const defaultProps = {
   elementID: 'g-recaptcha',
-  onloadCallback: undefined,
+  onloadCallback: () => null,
   onloadCallbackName: 'onloadCallback',
   verifyCallback: undefined,
   verifyCallbackName: 'verifyCallback',
