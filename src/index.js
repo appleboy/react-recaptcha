@@ -37,7 +37,7 @@ const defaultProps = {
   badge: 'bottomright',
 };
 
-const isReady = () => typeof window !== 'undefined' && typeof window.grecaptcha !== 'undefined';
+const isReady = () => typeof window !== 'undefined' && typeof window.grecaptcha !== 'undefined' && typeof window.grecaptcha.render === 'function';
 
 let readyCheck;
 
