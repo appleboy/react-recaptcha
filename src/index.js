@@ -8,16 +8,16 @@ const propTypes = {
   onloadCallback: PropTypes.func,
   verifyCallback: PropTypes.func,
   expiredCallback: PropTypes.func,
-  render: PropTypes.string,
+  render: PropTypes.oneOf(['onload', 'explicit']),
   sitekey: PropTypes.string,
-  theme: PropTypes.string,
+  theme: PropTypes.oneOf(['light', 'dark']),
   type: PropTypes.string,
   verifyCallbackName: PropTypes.string,
   expiredCallbackName: PropTypes.string,
-  size: PropTypes.string,
+  size: PropTypes.oneOf(['invisible', 'compact', 'normal']),
   tabindex: PropTypes.string,
   hl: PropTypes.string,
-  badge: PropTypes.string,
+  badge: PropTypes.oneOf(['bottomright', 'bottomleft', 'inline']),
 };
 
 const defaultProps = {
