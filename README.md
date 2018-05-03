@@ -33,7 +33,7 @@ $ npm install --save react-recaptcha
 
 # Usage
 
-You can see the [full example](./example) by follwing steps.
+You can see the [full example](./example) by following steps.
 
 ```
 $ npm install
