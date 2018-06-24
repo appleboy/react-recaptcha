@@ -22,6 +22,7 @@ const propTypes = {
 
 const defaultProps = {
   elementID: 'g-recaptcha',
+  className: 'g-recaptcha',
   onloadCallback: undefined,
   onloadCallbackName: 'onloadCallback',
   verifyCallback: undefined,
@@ -131,7 +132,7 @@ export default class Recaptcha extends Component {
 
     return (
       <div id={this.props.elementID}
-        className="g-recaptcha"
+        className={this.props.className}
         data-sitekey={this.props.sitekey}
         data-theme={this.props.theme}
         data-type={this.props.type}
