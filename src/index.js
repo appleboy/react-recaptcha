@@ -55,7 +55,7 @@ export default class Recaptcha extends Component {
       widget: null,
     };
 
-    if (!this.state.ready) {
+    if (!this.state.ready && typeof window !== 'undefined') {
       readyCheck = setInterval(this._updateReadyState.bind(this), 1000);
     }
   }
