@@ -141,7 +141,7 @@ ReactDOM.render(
 );
 ```
 
-Change the color theme of the widget. Please `theme` property `light|dark`. Default value is `light`.
+Change the color theme of the widget. Place `theme` property `light|dark`. Default value is `light`.
 
 ```javascript
 ReactDOM.render(
