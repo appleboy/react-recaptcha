@@ -8,7 +8,7 @@
 [npm-image]: http://img.shields.io/npm/v/react-recaptcha.svg
 [downloads-image]: http://img.shields.io/npm/dm/react-recaptcha.svg
 
-A [react.js]((http://facebook.github.io/react/)) reCAPTCHA for Google. The FREE anti-abuse service. Easy to add, advanced security, accessible to wide range of users and platforms.
+A [react.js](<(http://facebook.github.io/react/)>) reCAPTCHA for Google. The FREE anti-abuse service. Easy to add, advanced security, access to a wide range of users and platforms.
 
 # What is reCAPTCHA?
 
@@ -33,7 +33,7 @@ $ npm install --save react-recaptcha
 
 # Usage
 
-You can see the [full example](./example) by following steps.
+You can see the [full example](./example) by the following steps.
 
 ```
 $ npm install
@@ -67,13 +67,11 @@ Html example code:
 Jsx example code: `build/index.js`
 
 ```javascript
-var Recaptcha = require('react-recaptcha');
+var Recaptcha = require("react-recaptcha");
 
 ReactDOM.render(
-  <Recaptcha
-    sitekey="xxxxxxxxxxxxxxxxxxxx"
-  />,
-  document.getElementById('example')
+  <Recaptcha sitekey="xxxxxxxxxxxxxxxxxxxx" />,
+  document.getElementById("example")
 );
 ```
 
@@ -98,11 +96,11 @@ Deferring the render can be achieved by specifying your onload callback function
 Jsx example code: `build/index.js`
 
 ```javascript
-var Recaptcha = require('react-recaptcha');
+var Recaptcha = require("react-recaptcha");
 
 // specifying your onload callback function
-var callback = function () {
-  console.log('Done!!!!');
+var callback = function() {
+  console.log("Done!!!!");
 };
 
 ReactDOM.render(
@@ -111,22 +109,22 @@ ReactDOM.render(
     render="explicit"
     onloadCallback={callback}
   />,
-  document.getElementById('example')
+  document.getElementById("example")
 );
 ```
 
 Define verify Callback function
 
 ```javascript
-var Recaptcha = require('react-recaptcha');
+var Recaptcha = require("react-recaptcha");
 
 // specifying your onload callback function
-var callback = function () {
-  console.log('Done!!!!');
+var callback = function() {
+  console.log("Done!!!!");
 };
 
 // specifying verify callback function
-var verifyCallback = function (response) {
+var verifyCallback = function(response) {
   console.log(response);
 };
 
@@ -137,31 +135,25 @@ ReactDOM.render(
     verifyCallback={verifyCallback}
     onloadCallback={callback}
   />,
-  document.getElementById('example')
+  document.getElementById("example")
 );
 ```
 
-Change the color theme of the widget. Place `theme` property `light|dark`. Default value is `light`.
+Change the color theme of the widget. Place `theme` property `light|dark`. The default value is `light`.
 
 ```javascript
 ReactDOM.render(
-  <Recaptcha
-    sitekey="xxxxxxxxxxxxxxxxxxxx"
-    theme="dark"
-  />,
-  document.getElementById('example')
+  <Recaptcha sitekey="xxxxxxxxxxxxxxxxxxxx" theme="dark" />,
+  document.getElementById("example")
 );
 ```
 
-Change the type of CAPTCHA to serve. Please `type` property `audio|image`. Default value is `image`.
+Change the type of CAPTCHA to serve. Please `type` property `audio|image`. The default value is `image`.
 
 ```javascript
 ReactDOM.render(
-  <Recaptcha
-    sitekey="xxxxxxxxxxxxxxxxxxxx"
-    type="audio"
-  />,
-  document.getElementById('example')
+  <Recaptcha sitekey="xxxxxxxxxxxxxxxxxxxx" type="audio" />,
+  document.getElementById("example")
 );
 ```
 
@@ -170,53 +162,50 @@ ReactDOM.render(
 The reCAPTCHA widget can be manually reset by accessing the component instance via a callback ref and calling `.reset()` on the instance.
 
 ```javascript
-var Recaptcha = require('react-recaptcha');
+var Recaptcha = require("react-recaptcha");
 
 // create a variable to store the component instance
 let recaptchaInstance;
 
 // create a reset function
 const resetRecaptcha = () => {
-  recaptchaInstance.reset();  
+  recaptchaInstance.reset();
 };
 
 ReactDOM.render(
   <div>
     <Recaptcha
-      ref={e => recaptchaInstance = e}
+      ref={e => (recaptchaInstance = e)}
       sitekey="xxxxxxxxxxxxxxxxxxxx"
     />
-    <button
-      onClick={resetRecaptcha}
-    >
-     Reset
-    </button>
+    <button onClick={resetRecaptcha}>Reset</button>
   </div>,
-  document.getElementById('example')
+  document.getElementById("example")
 );
 ```
+
 ## Component props
 
 ### Available props
 
 The following props can be passed into the React reCAPTCHA component. These can also be viewed in the [source code](https://github.com/appleboy/react-recaptcha/blob/master/src/index.js#L4-L21)
 
-* `className` : the class for the reCAPTCHA div.
-* `onloadCallbackName` : the name of your onloadCallback function (see `onloadCallback` below).
-* `elementID` : the #id for the reCAPTCHA div.
-* `onloadCallback` : the callback to pass into the reCAPTCHA API if [rendering the reCAPTCHA explicitly](https://github.com/appleboy/react-recaptcha#explicitly-render-the-recaptcha-widget).
-* `verifyCallback` : the callback that fires after reCAPTCHA has verified a user.
-* `expiredCallback` : optional. A callback to pass into the reCAPTCHA if the reCAPTCHA response has expired.
-* `render` : specifies the render type for the component (e.g. explicit), see `onloadCallback` and [explicit rendering](https://github.com/appleboy/react-recaptcha#explicitly-render-the-recaptcha-widget).
-* `sitekey` : the sitekey for the reCAPTCHA widget, obtained after signing up for an API key.
-* `theme` : the color theme for the widget, either light or dark.
-* `type` : the type of reCAPTCHA you'd like to render, list of reCAPTCHA types [available here](https://developers.google.com/recaptcha/docs/versions).
-* `verifyCallbackName` : the name of your verifyCallback function, see `verifyCallback` above.
-* `expiredCallbackName` : the name of your expiredCallbackName function, see `expiredCallback` above.
-* `size` : the desired size of the reCAPTCHA widget, can be either 'compact' or 'normal'.
-* `tabindex` : optional: The tabindex of the widget and challenge. If other elements in your page use tabindex, it should be set to make user navigation easier. More info on tabindex [available here](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex).
-* `hl` : optional. Forces the widget to render in a specific language. Auto-detects the user's language if unspecified. List of language codes [available here](https://developers.google.com/recaptcha/docs/language).
-* `badge` : optional. Reposition the reCAPTCHA badge. 'inline' allows you to control the CSS.
+- `className` : the class for the reCAPTCHA div.
+- `onloadCallbackName` : the name of your onloadCallback function (see `onloadCallback` below).
+- `elementID` : the #id for the reCAPTCHA div.
+- `onloadCallback` : the callback to pass into the reCAPTCHA API if [rendering the reCAPTCHA explicitly](https://github.com/appleboy/react-recaptcha#explicitly-render-the-recaptcha-widget).
+- `verifyCallback` : the callback that fires after reCAPTCHA has verified a user.
+- `expiredCallback` : optional. A callback to pass into the reCAPTCHA if the reCAPTCHA response has expired.
+- `render` : specifies the render type for the component (e.g. explicit), see `onloadCallback` and [explicit rendering](https://github.com/appleboy/react-recaptcha#explicitly-render-the-recaptcha-widget).
+- `sitekey` : the sitekey for the reCAPTCHA widget, obtained after signing up for an API key.
+- `theme` : the color theme for the widget, either light or dark.
+- `type` : the type of reCAPTCHA you'd like to render, list of reCAPTCHA types [available here](https://developers.google.com/recaptcha/docs/versions).
+- `verifyCallbackName` : the name of your verifyCallback function, see `verifyCallback` above.
+- `expiredCallbackName` : the name of your expiredCallbackName function, see `expiredCallback` above.
+- `size` : the desired size of the reCAPTCHA widget, can be either 'compact' or 'normal'.
+- `tabindex` : optional: The tabindex of the widget and challenge. If other elements in your page use tabindex, it should be set to make user navigation easier. More info on tabindex [available here](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex).
+- `hl` : optional. Forces the widget to render in a specific language. Auto-detects the user's language if unspecified. List of language codes [available here](https://developers.google.com/recaptcha/docs/language).
+- `badge` : optional. Reposition the reCAPTCHA badge. 'inline' allows you to control the CSS.
 
 ### Default props
 
@@ -241,10 +230,9 @@ If not specified when rendering the component, the following props will be passe
   };
 ```
 
-
 ### Using invisible reCAPTCHA
 
-Use the invisible reCAPTCHA by setting `size` prop to 'invisible'. Since it is invisible, the reCAPTCHA widget must be executed programatically.
+Use the invisible reCAPTCHA by setting `size` prop to 'invisible'. Since it is invisible, the reCAPTCHA widget must be executed programmatically.
 
 ```javascript
 var Recaptcha = require('react-recaptcha');
@@ -288,8 +276,8 @@ ReactDOM.render(
 
 # Contributing
 
-* 1. Fork it
-* 2. Create your feature branch (git checkout -b my-new-feature)
-* 3. Commit your changes (git commit -am 'Add some feature')
-* 4. Push to the branch (git push origin my-new-feature)
-* 5. Create new Pull Request
+- 1. Fork it
+- 2. Create your feature branch (git checkout -b my-new-feature)
+- 3. Commit your changes (git commit -am 'Add some feature')
+- 4. Push to the branch (git push origin my-new-feature)
+- 5. Create new Pull Request
