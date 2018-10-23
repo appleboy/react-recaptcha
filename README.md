@@ -67,7 +67,7 @@ Html example code:
 Jsx example code: `build/index.js`
 
 ```javascript
-var Recaptcha = require("react-recaptcha");
+var Recaptcha = require('react-recaptcha');
 
 ReactDOM.render(
   <Recaptcha sitekey="xxxxxxxxxxxxxxxxxxxx" />,
@@ -96,11 +96,11 @@ Deferring the render can be achieved by specifying your onload callback function
 Jsx example code: `build/index.js`
 
 ```javascript
-var Recaptcha = require("react-recaptcha");
+var Recaptcha = require('react-recaptcha');
 
 // specifying your onload callback function
 var callback = function() {
-  console.log("Done!!!!");
+  console.log('Done!!!!');
 };
 
 ReactDOM.render(
@@ -116,11 +116,11 @@ ReactDOM.render(
 Define verify Callback function
 
 ```javascript
-var Recaptcha = require("react-recaptcha");
+var Recaptcha = require('react-recaptcha');
 
 // specifying your onload callback function
 var callback = function() {
-  console.log("Done!!!!");
+  console.log('Done!!!!');
 };
 
 // specifying verify callback function
@@ -135,7 +135,7 @@ ReactDOM.render(
     verifyCallback={verifyCallback}
     onloadCallback={callback}
   />,
-  document.getElementById("example")
+  document.getElementById('example')
 );
 ```
 
@@ -144,7 +144,7 @@ Change the color theme of the widget. Place `theme` property `light|dark`. The d
 ```javascript
 ReactDOM.render(
   <Recaptcha sitekey="xxxxxxxxxxxxxxxxxxxx" theme="dark" />,
-  document.getElementById("example")
+  document.getElementById('example')
 );
 ```
 
@@ -153,7 +153,7 @@ Change the type of CAPTCHA to serve. Please `type` property `audio|image`. The d
 ```javascript
 ReactDOM.render(
   <Recaptcha sitekey="xxxxxxxxxxxxxxxxxxxx" type="audio" />,
-  document.getElementById("example")
+  document.getElementById('example')
 );
 ```
 
@@ -162,7 +162,7 @@ ReactDOM.render(
 The reCAPTCHA widget can be manually reset by accessing the component instance via a callback ref and calling `.reset()` on the instance.
 
 ```javascript
-var Recaptcha = require("react-recaptcha");
+var Recaptcha = require('react-recaptcha');
 
 // create a variable to store the component instance
 let recaptchaInstance;
