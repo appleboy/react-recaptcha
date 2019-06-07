@@ -177,7 +177,7 @@ let recaptchaInstance;
 
 // create a reset function
 const resetRecaptcha = () => {
-  recaptchaInstance.reset();  
+  recaptchaInstance.reset();
 };
 
 ReactDOM.render(
