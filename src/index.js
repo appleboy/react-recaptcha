@@ -34,7 +34,7 @@ const defaultProps = {
   type: 'image',
   size: 'normal',
   tabindex: '0',
-  hl: 'en',
+  hl: undefined,
   badge: 'bottomright',
 };
 
