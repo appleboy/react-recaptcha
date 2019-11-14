@@ -8,7 +8,7 @@
 [npm-image]: http://img.shields.io/npm/v/react-recaptcha.svg
 [downloads-image]: http://img.shields.io/npm/dm/react-recaptcha.svg
 
-A [react.js]((http://facebook.github.io/react/)) reCAPTCHA for Google. The FREE anti-abuse service. Easy to add, advanced security, accessible to wide range of users and platforms.
+A [react.js]((http://facebook.github.io/react/)) reCAPTCHA V2 for Google. The FREE anti-abuse service. Easy to add, advanced security, accessible to wide range of users and platforms.
 
 # What is reCAPTCHA?
 
