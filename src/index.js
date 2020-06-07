@@ -42,8 +42,6 @@ const isReady = () => typeof window !== 'undefined'
   && typeof window.grecaptcha !== 'undefined'
   && typeof window.grecaptcha.render === 'function';
 
-let readyCheck;
-
 export default class Recaptcha extends Component {
 
   constructor(props) {
@@ -54,9 +52,10 @@ export default class Recaptcha extends Component {
       ready: isReady(),
       widget: null,
     };
+    this.readyCheck = null;
 
     if (!this.state.ready && typeof window !== 'undefined') {
-      readyCheck = setInterval(this._updateReadyState.bind(this), 1000);
+      this.readyCheck = setInterval(this._updateReadyState.bind(this), 1000);
     }
   }
 
@@ -75,7 +74,7 @@ export default class Recaptcha extends Component {
   }
 
   componentWillUnmount() {
-    clearInterval(readyCheck);
+    clearInterval(this.readyCheck);
   }
 
   reset() {
@@ -98,7 +97,7 @@ export default class Recaptcha extends Component {
         ready: true,
       });
 
-      clearInterval(readyCheck);
+      clearInterval(this.readyCheck);
     }
   }
 
