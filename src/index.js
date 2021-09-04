@@ -38,9 +38,10 @@ const defaultProps = {
   badge: 'bottomright',
 };
 
-const isReady = () => typeof window !== 'undefined'
+const isReady = (elementID) => typeof window !== 'undefined'
   && typeof window.grecaptcha !== 'undefined'
-  && typeof window.grecaptcha.render === 'function';
+  && typeof window.grecaptcha.render === 'function'
+  && document.getElementById(elementID);
 
 export default class Recaptcha extends Component {
 
@@ -49,7 +50,7 @@ export default class Recaptcha extends Component {
     this._renderGrecaptcha = this._renderGrecaptcha.bind(this);
     this.reset = this.reset.bind(this);
     this.state = {
-      ready: isReady(),
+      ready: isReady(props.elementID),
       widget: null,
     };
     this.readyCheck = null;
@@ -92,7 +93,7 @@ export default class Recaptcha extends Component {
   }
 
   _updateReadyState() {
-    if (isReady()) {
+    if (isReady(this.props.elementID)) {
       this.setState({
         ready: true,
       });
